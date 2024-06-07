@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 const Spinner = styled(motion.div)`
-  width: 50px;
-  height: 50px;
-  border: 4px solid black;
-  border-top: 4px solid red;
+  width: 30px;
+  height: 30px;
+  border: 4px solid white;
+  border-top: 2px solid black;
   border-radius: 50%;
 `
 
@@ -24,7 +24,7 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div className="center">
       {Carregando ? (
           <Spinner
             animate={{ rotate: 360 }}
@@ -36,7 +36,7 @@ function App() {
           </div>
         )
       }
-    </>
+    </div>
   )
 }
 
