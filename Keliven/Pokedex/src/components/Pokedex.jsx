@@ -29,18 +29,18 @@ export default function Pokedex() {
     return (
         <div className='pagina'>
             {pokemon && (
-                    <div className="pokemon">
-                        <h1>Pokémon</h1>
-                        <p>{pokemon.name}</p>
-                        <p>Peso: {pokemon.weight}g</p>
-                        <div className="pokemonDoisBotoes">
-                            <img src={pokemon.sprites.front_default} alt="Pokemon" />
-                            <div className="botoes">
-                                <button onClick={nextPokemon}>Próximo</button>
-                                <button onClick={previousPokemon}>Anterior</button>
-                            </div>
+                <div className="pokemon">
+                    <h1>Pokémon</h1>
+                    <p>{pokemon.name}</p>
+                    <p>Peso: {pokemon.weight}g</p>
+                    <div className="pokemonDoisBotoes">
+                        <img src={pokemon.sprites.front_default} alt="Pokemon" />
+                        <div className="botoes">
+                            <button onClick={nextPokemon}>Próximo</button>
+                            <button onClick={previousPokemon}>Anterior</button>
                         </div>
                     </div>
+                </div>
             )}
         </div>
     )
