@@ -1,3 +1,4 @@
+import '../styles/Pokedex.css'
 import { useState, useEffect } from "react"
 
 export default function Pokedex() {
@@ -22,19 +23,23 @@ export default function Pokedex() {
     }
 
     const previousPokemon = () =>{
-        setId(id - 1)
+        setId((id > 1) ? id - 1 : id)
     }
 
     return (
-        <div>
+        <div className='pagina'>
             {pokemon && (
                     <div className="pokemon">
                         <h1>Pokémon</h1>
                         <p>{pokemon.name}</p>
                         <p>Peso: {pokemon.weight}g</p>
-                        <img src={pokemon.sprites.front_default} alt="Pokemon" />
-                        <button onClick={nextPokemon}>Próximo</button>
-                        <button onClick={previousPokemon}>Anterior</button>
+                        <div className="pokemonDoisBotoes">
+                            <img src={pokemon.sprites.front_default} alt="Pokemon" />
+                            <div className="botoes">
+                                <button onClick={nextPokemon}>Próximo</button>
+                                <button onClick={previousPokemon}>Anterior</button>
+                            </div>
+                        </div>
                     </div>
             )}
         </div>
