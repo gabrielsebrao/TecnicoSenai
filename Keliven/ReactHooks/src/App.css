@@ -1,0 +1,41 @@
+* { 
+    margin: 0;
+    font-family: Arial;
+    background-color: rgb(244, 251, 252);
+    color: rgb(51, 51, 51);
+}
+
+.center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center button{
+    border-radius: 0.7vw;
+    height: 3.5vh;
+    margin-left: 0.9vw;
+}
+
+.center button:hover{
+    background-color: rgb(233, 233, 233);
+}
+
+.inputArea input {
+    height: 3vh;
+    border-radius: 0.6vh;
+}
+
+.inputArea {
+    margin-bottom: 1vh; 
+}
+
+.center h1 { 
+    margin-bottom: 1vh;
+}
+
+.center li {
+    margin-bottom: 1vh;
+}
