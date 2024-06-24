@@ -1,3 +1,4 @@
+import CharacterList from "../CharacterList/CharacterList"
 import "./CharacterSearch.css"
 import { useState, useEffect } from "react"
 
@@ -32,11 +33,10 @@ export default function CharacterSearch() {
                 onChange={handleInputChange}
                 placeholder='Type to search a character'
             />
+            
             {!loading && apiUsers.length === 0
                 ? <p>No users found</p>
-                : <ul>
-                    {apiUsers.map(user => <li key={user.id}>{user.name} <img src={user.image}></img></li>)}
-                </ul>
+                : <CharacterList apiUsers={apiUsers} name={name}/>
             }
         </div>
     )
