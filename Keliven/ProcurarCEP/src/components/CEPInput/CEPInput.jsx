@@ -15,12 +15,11 @@ export default function CEPInput() {
                 setEndereco(data.error ? [] : data)
             })
             .catch(err => {
-                setEndereco([])
+            
             })
     }, [apiCEP])
 
-    const getApiCEP = (e) => {
-        const searchTerm = e.target.value;
+    const getApiCEP = () => {
         setApiCEP(valueCEP)
         console.log(endereco)
     }
@@ -35,12 +34,25 @@ export default function CEPInput() {
         <div className="CEPInput">
             <input value={valueCEP} type="number" onChange={handleInputChange}></input>
             <button onClick={getApiCEP}>Buscar</button>
-            <Address
-                street={endereco.logradouro}
-                district={endereco.bairro}
-                city={endereco.localidade}
-                state={endereco.uf}
-            />
+            {!endereco.erro && endereco.length != 0
+                ? <Address
+                    street={endereco.logradouro}
+                    district={endereco.bairro}
+                    city={endereco.localidade}
+                    state={endereco.uf}
+                />
+                : <></>}
+            {endereco.erro
+                ? <h2>CEP não encontrado</h2>
+                : <></>}
+
+            {endereco.length == 0 && apiCEP.length == 0
+                ? <h2>Insira um CEP</h2>
+                : <></>}
+
+            {endereco.length == 0 && apiCEP.length != 0
+                ? <h2>Insira um CEP válido</h2>
+                : <></>}
         </div>
     )
 }
