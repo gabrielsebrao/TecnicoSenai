@@ -13,4 +13,12 @@ function addBook(book) {
     console.log("Livro adicionado")
 }
 
-module.exports = {Book, addBook, books}
+function removeBook(title) {
+    const index = books.findIndex(book => book.title === title)
+
+    if(index !== -1) {
+        books.splice(index, 1)
+    } 
+}
+
+module.exports = {Book, addBook, removeBook, books}
