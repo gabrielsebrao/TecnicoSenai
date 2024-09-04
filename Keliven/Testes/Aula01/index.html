@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <h1>Login</h1>
+    <form>
+        <input type="text" id="username" placeholder="Usuário" required>
+        <input type="text" id="password" placeholder="Senha" required>
+        <button type="submit" onclick="validate(event)">Enviar</button>
+        <span id="mensagemErro" style="display: none; color: red">Usuário ou senha incorretos</span>
+    </form>
+</body>
+</html>
